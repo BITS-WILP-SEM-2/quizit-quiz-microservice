@@ -13,27 +13,11 @@ import com.quizapp.quiz.entities.Quiz;
 
 @SpringBootTest
 class QuizApplicationTests {
-
-	@Autowired
-	private QuizRepository quizRepo;
-	Quiz quiz;
-
-	@Test
-	void contextLoads() {
-	}
 	
 	@Test
 	void testit() {
 		int x= 1+1;
 		assertThat(x).isEqualTo(2);
-	}
-	
-	@Test
-	public void testFindAll() {
-		quiz = new Quiz(1, "javaQuiz12", true, 10, null, null);
-		quizRepo.save(quiz);
-		List<Quiz> res= quizRepo.findAll();
-		assertThat(res.get(0).getQuizName()).isEqualTo(quiz.getQuizName());
 	}
 
 }

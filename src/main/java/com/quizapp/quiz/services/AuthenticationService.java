@@ -15,7 +15,7 @@ public class AuthenticationService {
 	@Autowired
 	private RestTemplate restTemplate;
 	
-	private final String validationUrl = "http://USER-SERVICE/users/token/validate";
+	private final String validationUrl = "http://13.50.219.28:8080/users/token/validate";
 	
 	/**
 	 * Validates the user's access token and retrieves user information.

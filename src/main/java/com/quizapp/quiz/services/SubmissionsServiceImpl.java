@@ -60,7 +60,7 @@ public class SubmissionsServiceImpl implements SubmissionsService {
 		HttpEntity<String> entity = new HttpEntity<>(headers);
 		
 		for(Submissions submission : submissions) {
-			ResponseEntity<User> user = restTemplate.exchange("http://USER-SERVICE/users?userId="+submission.getUserId(), HttpMethod.GET, entity, User.class);
+			ResponseEntity<User> user = restTemplate.exchange("http://13.50.219.28:8080/users?userId="+submission.getUserId(), HttpMethod.GET, entity, User.class);
 			submission.setUser(user.getBody());
 		}
 		return submissions;

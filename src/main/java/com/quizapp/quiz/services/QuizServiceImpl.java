@@ -158,7 +158,7 @@ public class QuizServiceImpl implements QuizService {
 		HttpEntity<String> entity = new HttpEntity<>(headers);
 
 		@SuppressWarnings("rawtypes")
-		ResponseEntity<List> totalUsers= restTemplate.exchange("http://USER-SERVICE/users/getall", HttpMethod.GET, entity, List.class);
+		ResponseEntity<List> totalUsers= restTemplate.exchange("http://13.50.219.28:8080/users/getall", HttpMethod.GET, entity, List.class);
 		res.put("quizCount", totalQuiz);
 		res.put("submissionsCount", totalSubmissions);
 		res.put("usersCount", (long)totalUsers.getBody().size()-1);

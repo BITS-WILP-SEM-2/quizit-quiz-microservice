@@ -60,7 +60,7 @@ public class SubmissionsServiceImpl implements SubmissionsService {
 		HttpEntity<String> entity = new HttpEntity<>(headers);
 		
 		for(Submissions submission : submissions) {
-			ResponseEntity<User> user = restTemplate.exchange("http://ec2-13-50-219-28.eu-north-1.compute.amazonaws.com:8080/users?userId="+submission.getUserId(), HttpMethod.GET, entity, User.class);
+			ResponseEntity<User> user = restTemplate.exchange("https://users-service.cfapps.us10-001.hana.ondemand.com/users?userId="+submission.getUserId(), HttpMethod.GET, entity, User.class);
 			submission.setUser(user.getBody());
 		}
 		return submissions;

@@ -1,0 +1,9 @@
+applications:
+  - name: quiz-service
+    memory: 1G
+    instances: 1
+    path: target/quiz-0.0.1-SNAPSHOT.jar
+    buildpacks:
+      - java_buildpack
+    env:
+      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 17.+ } }'
